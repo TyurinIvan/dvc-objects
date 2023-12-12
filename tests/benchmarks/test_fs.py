@@ -1,5 +1,6 @@
 import os
 
+import glitters
 import pytest
 from reflink import ReflinkImpossibleError
 from reflink import reflink as pyreflink
@@ -20,7 +21,13 @@ def links(make_tmp_dir_pytest_cache):
 
 
 @pytest.fixture(
-    params=[pytest.param(pyreflink, id="pyreflink"), reflink, hardlink, symlink]
+    params=[
+        pytest.param(pyreflink, id="pyreflink"),
+        reflink,
+        pytest.param(glitters.reflink, id="glitters"),
+        hardlink,
+        symlink,
+    ]
 )
 def link(request, original, links):
     link = request.param

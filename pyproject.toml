@@ -42,6 +42,7 @@ tests = [
     "pytest-mock",
     "pytest-benchmark",
     "reflink",
+    "glitters",
 ]
 dev = [
     "dvc-objects[tests]",
@@ -102,6 +103,7 @@ module = [
     "funcy",
     "reflink.*",
     "shortuuid",
+    "glitters",
 ]
 
 [tool.codespell]
